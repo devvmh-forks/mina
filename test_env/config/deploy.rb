@@ -37,11 +37,8 @@ task :environment do
 end
 #
 # desc "Deploys."
-task :deploy do
-  run :local do
-    puts 'buja'
-  end
 
+task deploy: :environment do
   deploy do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'

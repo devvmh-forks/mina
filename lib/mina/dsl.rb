@@ -24,8 +24,7 @@ module Mina
     end
 
     def run(backend)
-      # @commands = Commands.new
-      invoke :environment if backend == :remote
+      @commands = Commands.new
       yield
       commands.run(backend)
       @commands = Commands.new
